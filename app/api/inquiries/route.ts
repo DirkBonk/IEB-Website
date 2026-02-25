@@ -3,7 +3,6 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
 function required(name: string) {
   const v = process.env[name];
   if (!v) throw new Error(`Missing env var: ${name}`);
