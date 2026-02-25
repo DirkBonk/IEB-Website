@@ -1,11 +1,10 @@
-type PageProps = {
-  searchParams?: {
-    ticket?: string;
-  };
-};
+"use client";
 
-export default function DankePage({ searchParams }: PageProps) {
-  const ticket = searchParams?.ticket;
+import { useSearchParams } from "next/navigation";
+
+export default function DankePage() {
+  const params = useSearchParams();
+  const ticket = params.get("ticket");
 
   return (
     <main>
