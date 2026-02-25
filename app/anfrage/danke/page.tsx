@@ -1,10 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function DankePage() {
   const params = useSearchParams();
-  const ticket = params.get("ticket");
+  const [ticket, setTicket] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fromQuery = params.get("ticket");
+    if (fromQuery) {
+      setTicket(fromQuery);
+      // optional: auch im storage sichern
+      sessionStorage.setItem("ieb_last_ticket", fromQuery);
+      return;
+    }
+    const fromStorage = sessionStorage.getItem("ieb_last_ticket");
+    setTicket(fromStorage);
+  }, [params]);
 
   return (
     <main>
@@ -21,7 +34,7 @@ export default function DankePage() {
           </p>
         ) : (
           <p className="small" style={{ marginBottom: 0 }}>
-            Ticketnummer: (nicht übergeben)
+            Ticketnummer: (nicht verfügbar)
           </p>
         )}
       </div>

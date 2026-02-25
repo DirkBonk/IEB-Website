@@ -53,6 +53,7 @@ export default function AnfragePage() {
       setEmail("");
       setMessage("");
 
+      sessionStorage.setItem("ieb_last_ticket", ticket);
       router.push(`/anfrage/danke?ticket=${encodeURIComponent(ticket)}`);
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
