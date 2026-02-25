@@ -42,14 +42,44 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: "IEB – Industrieelektronik Bonk",
+  description:
+    "Reparatur & Service für elektronische Baugruppen in Brandenburg. Industrie-, Steuer- und Leistungselektronik.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="de">
-      <body>
-        <SiteHeader />
-        <div className="container">{children}</div>
-        <SiteFooter />
-      </body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "IEB – Industrieelektronik Bonk",
+              url: "https://www.ieb-bonk.de",
+              telephone: "+49 151 25855584",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Neugauler Str. 12",
+                addressLocality: "Oderaue",
+                postalCode: "16259",
+                addressCountry: "DE",
+              },
+              areaServed: "Brandenburg",
+              description:
+                "Reparatur & Service für elektronische Baugruppen, Industrieelektronik und Steuerungstechnik.",
+            }),
+          }}
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
