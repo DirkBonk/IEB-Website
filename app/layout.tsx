@@ -11,9 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "Reparatur & Service für elektronische Baugruppen (Industrie-, Steuer-, Leistungs- und Spezialelektronik). Fehlerdiagnose SMD/THT, Bauteiltausch, Rework – mit Dokumentation und optional Express.",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -42,10 +40,22 @@ export const metadata: Metadata = {
   },
 };
 
-export const metadata = {
-  title: "IEB – Industrieelektronik Bonk",
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "IEB – Industrieelektronik Bonk",
+  url: "https://www.ieb-bonk.de",
+  telephone: "+49 151 25855584",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Neugauler Str. 12",
+    addressLocality: "Oderaue",
+    postalCode: "16259",
+    addressCountry: "DE",
+  },
+  areaServed: "Brandenburg",
   description:
-    "Reparatur & Service für elektronische Baugruppen in Brandenburg. Industrie-, Steuer- und Leistungselektronik.",
+    "Reparatur & Service für elektronische Baugruppen, Industrieelektronik und Steuerungstechnik.",
 };
 
 export default function RootLayout({
@@ -55,31 +65,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <head>
+      <body>
+        {/* JSON-LD: zuverlässig im HTML */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "IEB – Industrieelektronik Bonk",
-              url: "https://www.ieb-bonk.de",
-              telephone: "+49 151 25855584",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Neugauler Str. 12",
-                addressLocality: "Oderaue",
-                postalCode: "16259",
-                addressCountry: "DE",
-              },
-              areaServed: "Brandenburg",
-              description:
-                "Reparatur & Service für elektronische Baugruppen, Industrieelektronik und Steuerungstechnik.",
-            }),
-          }}
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body>{children}</body>
+
+        <SiteHeader />
+        <div className="container">{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
