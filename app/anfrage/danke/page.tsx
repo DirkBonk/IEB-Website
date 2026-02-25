@@ -1,23 +1,13 @@
-"use client";
+type PageProps = {
+  searchParams?: {
+    ticket?: string;
+  };
+};
 
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+export const dynamic = "force-dynamic";
 
-export default function DankePage() {
-  const params = useSearchParams();
-  const [ticket, setTicket] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fromQuery = params.get("ticket");
-    if (fromQuery) {
-      setTicket(fromQuery);
-      // optional: auch im storage sichern
-      sessionStorage.setItem("ieb_last_ticket", fromQuery);
-      return;
-    }
-    const fromStorage = sessionStorage.getItem("ieb_last_ticket");
-    setTicket(fromStorage);
-  }, [params]);
+export default function DankePage({ searchParams }: PageProps) {
+  const ticket = searchParams?.ticket;
 
   return (
     <main>
@@ -34,7 +24,7 @@ export default function DankePage() {
           </p>
         ) : (
           <p className="small" style={{ marginBottom: 0 }}>
-            Ticketnummer: (nicht verfügbar)
+            Ticketnummer: (nicht übergeben)
           </p>
         )}
       </div>
