@@ -1,13 +1,9 @@
-type PageProps = {
-  searchParams?: {
-    ticket?: string;
-  };
-};
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
-export default function DankePage({ searchParams }: PageProps) {
-  const ticket = searchParams?.ticket;
+export default function DankePage() {
+  const ticket = cookies().get("ieb_last_ticket")?.value;
 
   return (
     <main>
@@ -24,7 +20,7 @@ export default function DankePage({ searchParams }: PageProps) {
           </p>
         ) : (
           <p className="small" style={{ marginBottom: 0 }}>
-            Ticketnummer: (nicht übergeben)
+            Ticketnummer: (nicht verfügbar)
           </p>
         )}
       </div>

@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
@@ -62,7 +63,13 @@ export async function POST(request: Request) {
         `IEB – Industrieelektronik Bonk\n` +
         `https://www.ieb-bonk.de\n`,
     });
-
+  cookies().set("ieb_last_ticket", ticket, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "lax",
+  path: "/",
+  maxAge: 60 * 30, // 30 Minuten
+});
     return NextResponse.json({ ticket, status: "sent" }, { status: 200 });
   } catch (e: any) {
     return NextResponse.json(

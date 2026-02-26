@@ -54,7 +54,7 @@ export default function AnfragePage() {
       setMessage("");
 
       sessionStorage.setItem("ieb_last_ticket", ticket);
-      router.push(`/anfrage/danke?ticket=${encodeURIComponent(ticket)}`);
+      router.push("/anfrage/danke");
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
       else setError("Fehler beim Senden der Anfrage.");
