@@ -1,24 +1,37 @@
-export default function Impressum() {
+// app/impressum/page.tsx
+import PageShell from "../../components/PageShell";
+
+export default function ImpressumPage() {
   return (
-    <main>
-      <h1>Impressum</h1>
-
-      <div className="card">
-        <h3 style={{ marginTop: 0 }}>IEB – Industrieelektronik Bonk</h3>
-        <p style={{ marginTop: 6 }}>
-          Reparatur & Service für elektronische Baugruppen
+    <PageShell>
+      <header className="max-w-3xl">
+        <h1 className="text-4xl font-semibold tracking-tight">Impressum</h1>
+        <p className="mt-4 text-neutral-700">
+          Angaben gemäß § 5 TMG
         </p>
+      </header>
 
-        <p className="small" style={{ marginTop: 0 }}>
+      <section className="mt-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">IEB – Industrieelektronik Bonk</h2>
+        <p className="mt-3 leading-relaxed text-neutral-700">
           Neugauler Str. 12<br />
           16259 Oderaue<br />
-          <a href="mailto:info@ieb-bonk.de">info@ieb-bonk.de</a><br />
-          <a href="tel:+4915125855584">Tel.: 0151-25855584</a><br />
-          <a href="https://www.ieb-bonk.de" target="_blank" rel="noreferrer">
-            www.ieb-bonk.de
-          </a>
+          Deutschland
         </p>
-      </div>
-    </main>
+
+        <p className="mt-4 leading-relaxed text-neutral-700">
+          Telefon: 0151-25855584<br />
+          E-Mail: info@ieb-bonk.de
+        </p>
+      </section>
+
+      <section className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+        <h2 className="text-xl font-semibold">Haftungshinweis</h2>
+        <p className="mt-3 leading-relaxed text-neutral-700">
+          Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
+          Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+        </p>
+      </section>
+    </PageShell>
   );
 }
