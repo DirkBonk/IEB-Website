@@ -36,13 +36,10 @@ export default function ServiceAblaufPage() {
           Transparent · Nachvollziehbar · Industrieorientiert
         </div>
 
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight">
-          Service & Ablauf
-        </h1>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight">Service & Ablauf</h1>
 
         <p className="mt-4 text-lg leading-relaxed text-neutral-700">
-          Transparenter Prozess für die Reparatur elektronischer Baugruppen – von
-          der Anfrage bis zur dokumentierten Rücklieferung.
+          Transparenter Prozess für die Reparatur elektronischer Baugruppen – von der Anfrage bis zur dokumentierten Rücklieferung.
         </p>
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -61,19 +58,13 @@ export default function ServiceAblaufPage() {
         </div>
       </header>
 
-      {/* Steps */}
       <section className="mt-12">
         <h2 className="text-2xl font-semibold">Ablauf in 4 Schritten</h2>
-        <p className="mt-2 text-neutral-700">
-          Reparatur erfolgt erst nach Freigabe.
-        </p>
+        <p className="mt-2 text-neutral-700">Reparatur erfolgt erst nach Freigabe.</p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {steps.map((s, idx) => (
-            <div
-              key={s.title}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
-            >
+            <div key={s.title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-900 text-sm font-semibold text-white">
                   {idx + 1}
@@ -88,19 +79,13 @@ export default function ServiceAblaufPage() {
         </div>
       </section>
 
-      {/* Options */}
       <section className="mt-12">
         <h2 className="text-2xl font-semibold">Optionen</h2>
-        <p className="mt-2 text-neutral-700">
-          Je nach Baugruppe und Anforderung.
-        </p>
+        <p className="mt-2 text-neutral-700">Je nach Baugruppe und Anforderung.</p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {options.map((o) => (
-            <div
-              key={o.title}
-              className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6"
-            >
+            <div key={o.title} className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
               <h3 className="font-semibold">{o.title}</h3>
               <p className="mt-2 leading-relaxed text-neutral-700">{o.text}</p>
             </div>
@@ -108,12 +93,10 @@ export default function ServiceAblaufPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-neutral-900 p-8 text-white">
         <h2 className="text-2xl font-semibold">Bereit für den nächsten Schritt?</h2>
         <p className="mt-3 max-w-3xl text-white/90 leading-relaxed">
-          Senden Sie Baugruppenbezeichnung und Fehlerbeschreibung. Sie erhalten
-          eine Ticketnummer und eine Bestätigung per E-Mail.
+          Senden Sie Baugruppenbezeichnung und Fehlerbeschreibung. Sie erhalten eine Ticketnummer und eine Bestätigung per E-Mail.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <Link
