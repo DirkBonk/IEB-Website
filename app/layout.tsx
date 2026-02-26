@@ -6,11 +6,9 @@ import SiteFooter from "../components/SiteFooter";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
-      <body className="min-h-screen bg-white text-neutral-900">
+      <body className="min-h-screen bg-white text-neutral-900 antialiased">
         <SiteHeader />
-        <div className="mx-auto max-w-6xl px-4">
-          <main className="py-10">{children}</main>
-        </div>
+        {children}
         <SiteFooter />
       </body>
     </html>
