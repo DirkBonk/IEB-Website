@@ -1,49 +1,26 @@
-// frontend/app/kontakt/page.tsx
-import Link from "next/link";
+import PageShell from "../../components/PageShell";
 
-export default function Kontakt() {
+export default function KontaktPage() {
   return (
-    <main>
+    <PageShell className="prose prose-neutral max-w-none">
       <h1>Kontakt</h1>
+      <p>Sie erreichen uns direkt oder über das Anfrageformular.</p>
 
-      <div className="grid grid-2">
-        <div className="card">
-          <h3>Reparaturanfrage</h3>
-          <p>
-            Am schnellsten über das Anfrageformular. Sie erhalten sofort eine
-            Bestätigung per E-Mail.
-          </p>
-          <Link href="/anfrage" className="btn btn-primary">
-            Zur Anfrage →
-          </Link>
+      <h2>IEB – Industrieelektronik Bonk</h2>
+      <p>
+        Neugauler Str. 12<br />
+        16259 Oderaue
+      </p>
 
-          <p className="small" style={{ marginTop: 12, marginBottom: 0 }}>
-            Tipp: Für eine schnelle Bearbeitung helfen Angaben zu Baugruppe,
-            Fehlerbild und Dringlichkeit (Standard/Express).
-          </p>
-        </div>
+      <p>
+        E-Mail: <a href="mailto:info@ieb-bonk.de">info@ieb-bonk.de</a>
+        <br />
+        Telefon: <a href="tel:+4915125855584">0151-25855584</a>
+      </p>
 
-        <div className="card">
-          <h3>IEB – Industrieelektronik Bonk</h3>
-          <p style={{ marginTop: 6, marginBottom: 10 }}>
-            Reparatur & Service für elektronische Baugruppen
-          </p>
-
-          <p className="small" style={{ marginTop: 0 }}>
-            Neugauler Str. 12
-            <br />
-            16259 Oderaue
-            <br />
-            <a href="mailto:info@ieb-bonk.de">info@ieb-bonk.de</a>
-            <br />
-            <a href="tel:+4915125855584">Tel.: 0151-25855584</a>
-            <br />
-            <a href="https://www.ieb-bonk.de" target="_blank" rel="noreferrer">
-              www.ieb-bonk.de
-            </a>
-          </p>
-        </div>
-      </div>
-    </main>
+      <p>
+        <a href="/anfrage">Reparaturanfrage starten →</a>
+      </p>
+    </PageShell>
   );
 }

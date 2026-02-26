@@ -1,18 +1,29 @@
-import Section from "../../components/Section";
+import PageShell from "../../components/PageShell";
 
-export default function UeberUns() {
+export default function ServiceAblaufPage() {
   return (
-    <main>
-      <h1>Über uns</h1>
-      <p>Hier kommt eure Story rein: wer ihr seid, wofür ihr steht, warum man euch vertrauen kann.</p>
+    <PageShell className="prose prose-neutral max-w-none">
+      <h1>Service-Ablauf</h1>
+      <p>So läuft eine Reparatur bei IEB ab – transparent und nachvollziehbar.</p>
 
-      <Section title="Unsere Werte">
-        <div className="grid grid-3">
-          <div className="card"><h3>Qualität</h3><p>Saubere Arbeit statt schneller Flick.</p></div>
-          <div className="card"><h3>Transparenz</h3><p>Klare Schritte, klare Kommunikation.</p></div>
-          <div className="card"><h3>Verlässlichkeit</h3><p>Was wir zusagen, liefern wir.</p></div>
-        </div>
-      </Section>
-    </main>
+      <ol>
+        <li>Anfrage über das Online-Formular</li>
+        <li>Prüfung &amp; Erstbewertung</li>
+        <li>Fehlerdiagnose</li>
+        <li>Reparatur / Bauteiltausch / Rework</li>
+        <li>Funktionsprüfung</li>
+        <li>Rückversand inkl. Dokumentation</li>
+      </ol>
+
+      <h2>Express</h2>
+      <p>
+        Wenn es zeitkritisch ist (z. B. Produktionsstillstand), vermerken Sie das in der Anfrage.
+        Wir priorisieren nach Abstimmung.
+      </p>
+
+      <p>
+        <a href="/anfrage">Reparaturanfrage starten →</a>
+      </p>
+    </PageShell>
   );
 }
