@@ -1,141 +1,139 @@
 // app/page.tsx
 import Link from "next/link";
+import PageShell from "../components/PageShell";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12">
+    <PageShell>
       {/* HERO */}
-      <header className="mb-12">
+      <section className="max-w-3xl">
         <div className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700">
-          Reparatur & Service für elektronische Baugruppen · Oderaue (Brandenburg)
+          Industrieelektronik · Baugruppenreparatur · Brandenburg
         </div>
 
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight">
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight leading-tight">
           Reparatur elektronischer Baugruppen für Industrie & Technik
         </h1>
 
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral-700">
-          Wir reparieren Industrie-, Steuer-, Leistungs- und Spezialelektronik auf Baugruppenebene –
-          schnell, wirtschaftlich und nachvollziehbar dokumentiert. Stellen Sie eine Anfrage und
-          erhalten Sie eine Bestätigung per E-Mail inkl. Ticketnummer.
+        <p className="mt-5 text-lg leading-relaxed text-neutral-700">
+          IEB – Industrieelektronik Bonk unterstützt Unternehmen bei der
+          wirtschaftlichen Instandsetzung defekter Elektronik – statt
+          kostenintensivem Austausch bei langen Lieferzeiten.
         </p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/anfrage"
             className="inline-flex items-center justify-center rounded-2xl bg-neutral-900 px-6 py-3 text-white shadow-sm hover:bg-neutral-800"
           >
-            Anfrage stellen →
+            Reparaturanfrage starten →
           </Link>
+
           <Link
-            href="/service-ablauf"
+            href="/leistungen"
             className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-neutral-900 shadow-sm hover:bg-neutral-50"
           >
-            Service & Ablauf
+            Leistungen ansehen
           </Link>
         </div>
+      </section>
 
-        <ul className="mt-8 grid gap-3 sm:grid-cols-3 text-sm text-neutral-700">
-          <li className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
-            ✅ Diagnose auf Baugruppen-/Bauteilebene
-          </li>
-          <li className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
-            ✅ Funktionsprüfung & Dokumentation
-          </li>
-          <li className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
-            ✅ Express möglich nach Abstimmung
-          </li>
-        </ul>
-      </header>
+      {/* VORTEILE */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold">
+          Warum Reparatur statt Austausch?
+        </h2>
 
-      {/* LEISTUNGEN (kurz) */}
-      <section className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold">Leistungen</h2>
-        <p className="mt-3 text-neutral-700">
-          Fokus auf Instandsetzung industrieller Elektronik – zuverlässig, nachvollziehbar und wirtschaftlich.
-        </p>
-
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
-              t: "Reparatur elektronischer Baugruppen",
-              d: "Instandsetzung von Leiterplatten, Steuerungen und Industrieelektronik – auch bei älteren Baugruppen.",
+              title: "Kosten sparen",
+              text: "Reparatur ist häufig deutlich günstiger als Neubeschaffung – besonders bei Industrie- und Spezialelektronik.",
             },
             {
-              t: "Fehlerdiagnose SMD / THT",
-              d: "Gezielte Eingrenzung des Fehlerbildes mit geeigneter Mess- und Prüftechnik.",
+              title: "Stillstand reduzieren",
+              text: "Schnelle Diagnose und Reparatur helfen, Produktionsausfälle zu minimieren.",
             },
             {
-              t: "Bauteiltausch & Rework",
-              d: "SMD/THT, Fine Pitch (z. B. QFN) – abhängig von Aufbau und Schadensbild.",
+              title: "Lieferzeiten umgehen",
+              text: "Bei langen Lieferzeiten für Ersatzgeräte ist die Instandsetzung oft die wirtschaftlichere Lösung.",
             },
-            {
-              t: "Funktionsprüfung & Dokumentation",
-              d: "Nach Reparatur – soweit sinnvoll möglich – Prüfung vor Rückversand inkl. Dokumentation.",
-            },
-          ].map((c) => (
-            <div key={c.t} className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-              <h3 className="font-semibold">{c.t}</h3>
-              <p className="mt-2 leading-relaxed text-neutral-700">{c.d}</p>
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="mt-3 leading-relaxed text-neutral-700">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
+      </section>
 
-        <p className="mt-6 text-neutral-700">
-          <Link className="underline font-medium" href="/leistungen">
-            Alle Leistungen ansehen →
+      {/* EINSATZBEREICHE */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold">
+          Typische Einsatzbereiche
+        </h2>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {[
+            "Maschinenbau",
+            "Automatisierungstechnik",
+            "Instandhaltung & Produktion",
+            "Energie- & Umwelttechnik",
+            "Spezial- & Steuerungselektronik",
+            "EMS-Dienstleister",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-4"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ABLAUF TEASER */}
+      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-8">
+        <h2 className="text-2xl font-semibold">So läuft es ab</h2>
+        <p className="mt-4 leading-relaxed text-neutral-700">
+          Anfrage → Diagnose → Freigabe → Reparatur → Prüfung →
+          dokumentierte Rücklieferung.
+        </p>
+
+        <div className="mt-6">
+          <Link
+            href="/service-ablauf"
+            className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-neutral-900 shadow-sm hover:bg-neutral-100"
+          >
+            Ablauf im Detail →
           </Link>
-        </p>
-      </section>
-
-      {/* REGION + FAQ */}
-      <section className="mt-14 grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">Brandenburg & Berlin</h2>
-          <p className="mt-3 leading-relaxed text-neutral-700">
-            Standort Oderaue. Service für Brandenburg & Berlin – meist per Versand, nach Abstimmung auch regional.
-          </p>
-          <p className="mt-4">
-            <Link className="underline font-medium" href="/industrieelektronik-reparatur-brandenburg">
-              Zur Landingpage Brandenburg →
-            </Link>
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">Häufige Fragen</h2>
-          <p className="mt-3 leading-relaxed text-neutral-700">
-            Antworten zu Ablauf, Dauer, Versand, Funktionsprüfung und Dokumentation finden Sie in den{" "}
-            <Link className="underline font-medium" href="/faq">
-              FAQ
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mt-14 rounded-2xl border border-neutral-200 bg-neutral-900 p-8 text-white">
-        <h2 className="text-2xl font-semibold">Jetzt Reparaturanfrage senden</h2>
-        <p className="mt-3 max-w-3xl text-white/90 leading-relaxed">
-          Senden Sie uns Baugruppenbezeichnung und Fehlerbeschreibung. Sie erhalten eine Ticketnummer und Bestätigung per E-Mail.
+      {/* ABSCHLUSS CTA */}
+      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-900 p-10 text-white">
+        <h2 className="text-2xl font-semibold">
+          Defekte Baugruppe? Jetzt prüfen lassen.
+        </h2>
+        <p className="mt-4 max-w-3xl text-white/90 leading-relaxed">
+          Senden Sie Baugruppenbezeichnung, Fehlerbeschreibung und Dringlichkeit.
+          Sie erhalten eine Ticketnummer und eine Bestätigung per E-Mail.
         </p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8">
           <Link
             href="/anfrage"
             className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium text-neutral-900 hover:bg-neutral-100"
           >
-            Anfrage starten →
-          </Link>
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-transparent px-6 py-3 text-white hover:bg-white/10"
-          >
-            Kontakt
+            Reparaturanfrage starten →
           </Link>
         </div>
       </section>
-    </main>
+    </PageShell>
   );
 }
