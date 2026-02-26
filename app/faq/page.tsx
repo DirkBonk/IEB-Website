@@ -5,10 +5,13 @@ import PageShell from "../../components/PageShell";
 import BreadcrumbJsonLd from "../../components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "FAQ | Baugruppen- & Industrieelektronik Reparatur | IEB Bonk",
+  title:
+    "FAQ Baugruppen Reparatur | Industrieelektronik Reparatur Brandenburg | IEB Bonk",
   description:
-    "Antworten auf häufige Fragen zur Reparatur elektronischer Baugruppen – Ablauf, Dauer, Express, Versand und Dokumentation.",
-  alternates: { canonical: "https://www.ieb-bonk.de/faq" },
+    "Häufige Fragen zur Reparatur elektronischer Baugruppen: Kosten, Dauer, Reparatur vs Austausch, Versand, Funktionsprüfung und Ablauf.",
+  alternates: {
+    canonical: "https://www.ieb-bonk.de/faq",
+  },
 };
 
 const SITE = "https://www.ieb-bonk.de";
@@ -16,23 +19,31 @@ const SITE = "https://www.ieb-bonk.de";
 const FAQ = [
   {
     q: "Wie lange dauert eine Reparatur?",
-    a: "Das hängt vom Fehlerbild und der Ersatzteilverfügbarkeit ab. Für zeitkritische Fälle ist Express nach Absprache möglich.",
+    a: "Die Dauer hängt vom Fehlerbild und der Ersatzteilverfügbarkeit ab. Nach Eingang erfolgt eine Diagnose. Bei zeitkritischen Fällen ist Express-Bearbeitung nach Absprache möglich.",
   },
   {
-    q: "Erfolgt die Reparatur sofort?",
-    a: "Die Reparatur erfolgt erst nach Freigabe. Vorher erhalten Sie eine Rückmeldung bzw. einen nachvollziehbaren Kostenvoranschlag (je nach Fall).",
+    q: "Was kostet eine Baugruppenreparatur?",
+    a: "Die Kosten hängen von Baugruppe, Fehlerbild und benötigten Ersatzteilen ab. In vielen Fällen ist die Reparatur deutlich günstiger als eine Neubeschaffung – insbesondere bei Industrie- und Spezialelektronik mit langen Lieferzeiten.",
+  },
+  {
+    q: "Wann lohnt sich eine Reparatur?",
+    a: "Eine Reparatur lohnt sich besonders bei langen Lieferzeiten, hohen Neupreisen oder nicht mehr verfügbaren Ersatzgeräten. Auch bei älteren, bewährten Anlagen kann die Instandsetzung wirtschaftlich sinnvoller sein als ein kompletter Austausch.",
+  },
+  {
+    q: "Reparatur oder Austausch – was ist sinnvoller?",
+    a: "Ein Austausch ist oft teurer und mit Lieferzeiten verbunden. Eine Reparatur auf Baugruppen- oder Bauteilebene kann Kosten sparen und Stillstandszeiten reduzieren. Die Entscheidung hängt vom Zustand der Baugruppe, der Verfügbarkeit von Ersatzteilen und den wirtschaftlichen Rahmenbedingungen ab.",
   },
   {
     q: "Kann ich die Baugruppe zusenden?",
-    a: "Ja. Die Abwicklung erfolgt meist per Versand. Bitte ESD-sicher verpacken und gut polstern. Beilegen: Fehlerbeschreibung, Baugruppenbezeichnung, Dringlichkeit.",
+    a: "Ja. Die Abwicklung erfolgt in der Regel per Versand. Bitte ESD-sicher verpacken und ausreichend polstern. Idealerweise legen Sie eine Fehlerbeschreibung und Kontaktdaten bei.",
   },
   {
-    q: "Gibt es Funktionsprüfung und Dokumentation?",
-    a: "Ja. Nach der Reparatur erfolgt – soweit sinnvoll möglich – eine Funktionsprüfung. Sie erhalten außerdem eine Dokumentation/Reparaturbericht.",
+    q: "Gibt es eine Funktionsprüfung nach der Reparatur?",
+    a: "Nach der Reparatur erfolgt – soweit technisch sinnvoll möglich – eine Funktionsprüfung. Zusätzlich erhalten Sie eine nachvollziehbare Dokumentation der durchgeführten Arbeiten.",
   },
   {
     q: "Welche Baugruppen repariert IEB?",
-    a: "Industrie-, Steuer-, Leistungs- sowie Spezialelektronik – abhängig von Baugruppe, Fehlerbild und Prüfmöglichkeiten.",
+    a: "Repariert werden unter anderem Steuerungen, Leiterplatten (PCB), Leistungselektronik, Netzteile, Antriebselektronik und industrielle Spezialbaugruppen – abhängig von Fehlerbild und Prüfmöglichkeiten.",
   },
 ];
 
@@ -40,10 +51,13 @@ export default function FAQPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ.map((f) => ({
+    mainEntity: FAQ.map((item) => ({
       "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
     })),
   };
 
@@ -63,23 +77,15 @@ export default function FAQPage() {
 
       <header className="max-w-3xl">
         <div className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700">
-          Kurz & klar · Für Industrie & Technik
+          Antworten für Industrie & Instandhaltung
         </div>
 
         <h1 className="mt-4 text-4xl font-semibold tracking-tight">
-          Häufige Fragen (FAQ)
+          Häufige Fragen zur Baugruppen- und Industrieelektronik Reparatur
         </h1>
 
         <p className="mt-4 text-lg leading-relaxed text-neutral-700">
-          Antworten rund um Ablauf, Dauer, Versand, Funktionsprüfung und
-          Dokumentation.
-        </p>
-
-        <p className="mt-4 text-neutral-700">
-          Ablauf im Detail:{" "}
-          <Link className="underline font-medium" href="/service-ablauf">
-            Service & Ablauf →
-          </Link>
+          Informationen zu Kosten, Ablauf, Reparatur vs. Austausch und Versand.
         </p>
       </header>
 
@@ -103,10 +109,13 @@ export default function FAQPage() {
       </section>
 
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-neutral-900 p-8 text-white">
-        <h2 className="text-2xl font-semibold">Noch Fragen?</h2>
+        <h2 className="text-2xl font-semibold">
+          Noch Fragen zur Industrieelektronik Reparatur?
+        </h2>
         <p className="mt-3 max-w-3xl text-white/90 leading-relaxed">
           Senden Sie eine Reparaturanfrage oder kontaktieren Sie uns direkt.
         </p>
+
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/anfrage"
