@@ -1,0 +1,23 @@
+[33m67e5df6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Brandenburg Landing + FAQ Teaser + Breadcrumb
+[33mf4c95a2[m Brandenburg Landing + FAQ Teaser + Breadcrumb
+[33m5ea8cc6[m Restore correct Anfrage page
+[33mce5b6e4[m Force redeploy
+[33mf46847b[m Clear ticket cookie when opening /anfrage
+[33ma8b2015[m Fix danke page cookies await
+[33m23dfa04[m Set ticket cookie via response
+[33m8470dc7[m Persist ticket via cookie for danke page
+[33m6814860[m Fix danke prerender (server component)
+[33mbab1b59[m Persist ticket for danke page
+[33m69a2c44[m Show ticket on danke page
+[33m95e18fd[m Add nodemailer + types and mail route
+[33m7b9fa0b[m Add nodemailer types
+[33me77f1e8[m Force node runtime for mail route
+[33mb82aad1[m Redeploy with SMTP
+[33mffba015[m Fix API fetch path
+[33mc7951c8[m Update Leistungen page for IEB services
+[33m4c8c1ea[m Fix layout metadata + add JSON-LD schema
+[33m9548e75[m Add LocalBusiness schema
+[33m27db0b3[m Fix danke prerender by using searchParams prop
+[33mbf6c721[m Fix danke prerender error
+[33m4abd7fe[m Fix Pmpressum Build Error
+[33m554ffab[m IEB-Website
