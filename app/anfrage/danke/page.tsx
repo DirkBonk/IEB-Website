@@ -2,8 +2,9 @@ import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
-export default function DankePage() {
-  const ticket = cookies().get("ieb_last_ticket")?.value;
+export default async function DankePage() {
+  const cookieStore = await cookies();
+  const ticket = cookieStore.get("ieb_last_ticket")?.value;
 
   return (
     <main>
