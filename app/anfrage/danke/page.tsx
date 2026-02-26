@@ -3,8 +3,8 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import PageShell from "../../../components/PageShell";
 
-export default function AnfrageDankePage() {
-  const store = cookies();
+export default async function AnfrageDankePage() {
+  const store = await cookies();
   const ticket = store.get("ieb_last_ticket")?.value ?? null;
 
   // Cookie nach Auslesen löschen (Flow wie beschrieben)
