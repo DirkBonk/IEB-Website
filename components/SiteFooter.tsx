@@ -24,7 +24,7 @@ export default function SiteFooter() {
             <ul className="mt-2 space-y-2 text-sm text-neutral-700">
               <li><Link className="underline" href="/leistungen">Leistungen</Link></li>
               <li><Link className="underline" href="/service-ablauf">Service-Ablauf</Link></li>
-              <li><Link className="underline" href="/industrieelektronik-reparatur-brandenburg">Brandenburg</Link></li>
+              <li><Link className="underline" href="/industrieelektronik-reparatur-brandenburg">Industrieelektronik Reparatur Brandenburg</Link></li>
               <li><Link className="underline font-medium" href="/faq">FAQ</Link></li>
               <li><Link className="underline" href="/kontakt">Kontakt</Link></li>
               <li><Link className="underline" href="/anfrage">Anfrage</Link></li>
