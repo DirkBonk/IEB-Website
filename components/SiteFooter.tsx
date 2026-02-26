@@ -1,13 +1,14 @@
+// components/SiteFooter.tsx
 import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-20 border-t border-neutral-200 bg-neutral-50">
-      <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-3">
+    <footer className="border-t border-neutral-200 bg-neutral-50">
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <div className="font-semibold">IEB – Industrieelektronik Bonk</div>
-            <p className="mt-3 text-sm text-neutral-700">
+            <div className="text-sm font-semibold">IEB – Industrieelektronik Bonk</div>
+            <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
               Neugauler Str. 12<br />
               16259 Oderaue
             </p>
@@ -19,8 +20,8 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <div className="font-semibold">Navigation</div>
-            <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+            <div className="text-sm font-semibold">Navigation</div>
+            <ul className="mt-2 space-y-2 text-sm text-neutral-700">
               <li><Link className="underline" href="/leistungen">Leistungen</Link></li>
               <li><Link className="underline" href="/service-ablauf">Service-Ablauf</Link></li>
               <li><Link className="underline" href="/industrieelektronik-reparatur-brandenburg">Brandenburg</Link></li>
@@ -31,15 +32,15 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <div className="font-semibold">Rechtliches</div>
-            <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+            <div className="text-sm font-semibold">Rechtliches</div>
+            <ul className="mt-2 space-y-2 text-sm text-neutral-700">
               <li><Link className="underline" href="/impressum">Impressum</Link></li>
               <li><Link className="underline" href="/datenschutz">Datenschutz</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-neutral-200 pt-6 text-xs text-neutral-500">
+        <div className="mt-8 text-xs text-neutral-500">
           © {new Date().getFullYear()} IEB – Industrieelektronik Bonk
         </div>
       </div>
