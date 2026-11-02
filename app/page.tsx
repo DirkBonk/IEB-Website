@@ -66,23 +66,24 @@ const steps = [
 export default function HomePage() {
   return (
     <PageShell>
+      <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr]">
       <header className="max-w-3xl">
-        <div className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700">
+        <div className="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-medium text-teal-800">
           IEB – Industrieelektronik Bonk · Oderaue in Brandenburg
         </div>
 
-        <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight">
+        <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-[#102c40] sm:text-5xl">
           Reparatur von Industrieelektronik, Platinen und Steuerungen
         </h1>
 
-        <p className="mt-5 text-lg leading-relaxed text-neutral-700">
+        <p className="mt-5 text-lg leading-relaxed text-slate-600">
           Ihre Maschine steht, ein Netzteil fällt aus oder eine Steuerungsplatine
           reagiert nicht mehr? IEB – Industrieelektronik Bonk untersucht
           elektronische Baugruppen und prüft, ob sich der Fehler auf
           Bauteilebene beheben lässt.
         </p>
 
-        <p className="mt-4 leading-relaxed text-neutral-700">
+        <p className="mt-4 leading-relaxed text-slate-600">
           Wir unterstützen Unternehmen, Instandhaltungsbetriebe und technische
           Dienstleister mit Diagnose, Reparatur und nachvollziehbarer
           Dokumentation. Die Abwicklung erfolgt nach Absprache per Versand
@@ -92,18 +93,41 @@ export default function HomePage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/anfrage"
-            className="inline-flex items-center justify-center rounded-2xl bg-neutral-900 px-6 py-3 text-white shadow-sm hover:bg-neutral-800"
+            className="inline-flex items-center justify-center rounded-2xl bg-teal-700 px-6 py-3 text-white shadow-sm hover:bg-teal-800"
           >
             Reparaturanfrage starten →
           </Link>
           <Link
             href="/leistungen"
-            className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-neutral-900 shadow-sm hover:bg-neutral-50"
+            className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-slate-900 shadow-sm hover:bg-slate-50"
           >
             Reparaturleistungen ansehen
           </Link>
         </div>
       </header>
+        <aside className="relative overflow-hidden rounded-3xl bg-[#102c40] p-6 text-white sm:p-8" aria-label="Unser Ansatz">
+          <p className="text-xs font-semibold uppercase tracking-widest text-teal-200">Technik erhalten</p>
+          <svg viewBox="0 0 360 240" className="my-5 w-full" fill="none" aria-hidden="true">
+            <rect x="24" y="20" width="312" height="200" rx="18" stroke="#3c697a" />
+            <g stroke="#559b9e" strokeWidth="2">
+              <path d="M24 60h70l35 35h24M24 120h129M24 180h70l35-35h24M207 95h24l35-35h70M207 120h129M207 145h24l35 35h70M180 20v65M180 155v65"/>
+              <path d="M70 20v22M70 198v22M290 20v22M290 198v22"/>
+            </g>
+            <rect x="138" y="78" width="84" height="84" rx="8" fill="#164557" stroke="#7dd3c8" strokeWidth="2"/>
+            <rect x="151" y="91" width="58" height="58" rx="4" stroke="#4c8b91"/>
+            <g fill="#99e4d6"><circle cx="56" cy="120" r="5"/><circle cx="304" cy="120" r="5"/><circle cx="180" cy="45" r="5"/><circle cx="180" cy="195" r="5"/></g>
+            <path d="M164 120h8l5-10 7 20 5-10h8" stroke="#99e4d6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <g fill="#deb982"><circle cx="44" cy="40" r="4"/><circle cx="316" cy="40" r="4"/><circle cx="44" cy="200" r="4"/><circle cx="316" cy="200" r="4"/></g>
+          </svg>
+          <h2 className="text-2xl font-semibold leading-tight">Erst den Fehler verstehen.<br />Dann gezielt instand setzen.</h2>
+          <p className="mt-4 leading-relaxed text-slate-200">Diagnose auf Bauteilebene, abgestimmte Reparatur und dokumentierte Prüfergebnisse.</p>
+          <div className="mt-6 flex flex-wrap gap-2 border-t border-white/20 pt-5 text-xs text-teal-100">
+            <span className="rounded-full bg-white/10 px-3 py-2">SMD / THT</span>
+            <span className="rounded-full bg-white/10 px-3 py-2">Baugruppen</span>
+            <span className="rounded-full bg-white/10 px-3 py-2">Netzteile</span>
+          </div>
+        </aside>
+      </div>
 
       <section className="mt-16">
         <h2 className="text-2xl font-semibold">
@@ -111,20 +135,21 @@ export default function HomePage() {
         </h2>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-slate-200 border-t-4 border-t-teal-600 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold">{service.title}</h3>
-              <p className="mt-3 leading-relaxed text-neutral-700">
+              <span aria-hidden="true" className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-teal-50 font-semibold text-teal-800">0{index + 1}</span>
+              <h3 className="text-lg font-semibold text-[#102c40]">{service.title}</h3>
+              <p className="mt-3 leading-relaxed text-slate-600">
                 {service.text}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-5 max-w-3xl leading-relaxed text-neutral-700">
+        <p className="mt-5 max-w-3xl leading-relaxed text-slate-600">
           Nicht jede Baugruppe lässt sich reparieren oder ohne die zugehörige
           Anlage vollständig testen. Senden Sie uns zunächst die
           Typenbezeichnung und eine möglichst genaue Fehlerbeschreibung.
@@ -133,7 +158,7 @@ export default function HomePage() {
 
         <Link
           href="/leistungen"
-          className="mt-4 inline-block font-medium underline underline-offset-4"
+          className="mt-4 inline-block font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950"
         >
           Mehr zu Platinenreparatur, Netzteilen und Prüfmöglichkeiten →
         </Link>
@@ -148,10 +173,10 @@ export default function HomePage() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6"
+              className="border-l-2 border-teal-600 py-1 pl-6"
             >
               <h3 className="text-lg font-semibold">{benefit.title}</h3>
-              <p className="mt-3 leading-relaxed text-neutral-700">
+              <p className="mt-3 leading-relaxed text-slate-600">
                 {benefit.text}
               </p>
             </div>
@@ -159,7 +184,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8">
+      <section className="mt-16 rounded-3xl border border-teal-100 bg-teal-50 p-6 sm:p-10">
         <h2 className="text-2xl font-semibold">
           So läuft Ihre Reparaturanfrage ab
         </h2>
@@ -168,7 +193,7 @@ export default function HomePage() {
           {steps.map((step) => (
             <li key={step.title} className="pl-1">
               <h3 className="text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 leading-relaxed text-neutral-700">
+              <p className="mt-2 leading-relaxed text-slate-600">
                 {step.text}
               </p>
             </li>
@@ -178,23 +203,23 @@ export default function HomePage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/service-ablauf"
-            className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-neutral-900 shadow-sm hover:bg-neutral-100"
+            className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-slate-900 shadow-sm hover:bg-teal-50"
           >
             Reparaturablauf im Detail →
           </Link>
           <Link
             href="/faq"
-            className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-neutral-900 shadow-sm hover:bg-neutral-100"
+            className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-slate-900 shadow-sm hover:bg-teal-50"
           >
             Fragen zu Kosten, Prüfung und Versand
           </Link>
         </div>
       </section>
-      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8">
+      <section className="mt-16 rounded-3xl border border-amber-100 bg-[#faf7f0] p-6 sm:p-10">
         <h2 className="text-2xl font-semibold">
           Einblick in unsere Werkstattarbeit
         </h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-neutral-700">
+        <p className="mt-4 max-w-3xl leading-relaxed text-slate-600">
           Ein dokumentierter Praxisfall zeigt die Sichtprüfung einer
           elektronischen Baugruppe, die Nacharbeit zweier Lötstellen und
           die Überprüfung der Versorgungsspannungen. Der Bericht benennt
@@ -202,7 +227,7 @@ export default function HomePage() {
         </p>
         <Link
           href="/referenzen"
-          className="mt-4 inline-block font-medium underline underline-offset-4"
+          className="mt-4 inline-block font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950"
         >
           Praxisbeispiel zur Baugruppenprüfung ansehen →
         </Link>
@@ -212,14 +237,14 @@ export default function HomePage() {
           Ihr Ansprechpartner für Elektronikreparatur in Oderaue
         </h2>
 
-        <p className="mt-4 leading-relaxed text-neutral-700">
+        <p className="mt-4 leading-relaxed text-slate-600">
           IEB – Industrieelektronik Bonk hat seinen Standort in Oderaue im
           Landkreis Märkisch-Oderland. Wir bearbeiten Reparaturanfragen für
           Maschinenbau, Instandhaltung, Automatisierung und technische
           Servicebetriebe.
         </p>
 
-        <p className="mt-4 leading-relaxed text-neutral-700">
+        <p className="mt-4 leading-relaxed text-slate-600">
           Bitte stimmen Sie die Einsendung Ihrer Baugruppe vorab mit uns ab.
           Wenn Sie die Elektronik persönlich abgeben möchten, vereinbaren
           Sie bitte einen Termin.
@@ -227,13 +252,13 @@ export default function HomePage() {
 
         <Link
           href="/industrieelektronik-reparatur-brandenburg"
-          className="mt-4 inline-block font-medium underline underline-offset-4"
+          className="mt-4 inline-block font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950"
         >
           Reparaturservice für Brandenburg und Berlin →
         </Link>
       </section>
 
-      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-900 p-6 text-white sm:p-10">
+      <section className="mt-16 rounded-3xl border border-slate-200 bg-[#102c40] p-6 text-white sm:p-10">
         <h2 className="text-2xl font-semibold">
           Defekte Elektronik? Beschreiben Sie uns den Fehler.
         </h2>
@@ -249,7 +274,7 @@ export default function HomePage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/anfrage"
-            className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium text-neutral-900 hover:bg-neutral-100"
+            className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 font-medium text-slate-900 hover:bg-teal-50"
           >
             Reparaturanfrage starten →
           </Link>
