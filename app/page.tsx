@@ -190,7 +190,23 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
+      <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8">
+        <h2 className="text-2xl font-semibold">
+          Einblick in unsere Werkstattarbeit
+        </h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-neutral-700">
+          Ein dokumentierter Praxisfall zeigt die Sichtprüfung einer
+          elektronischen Baugruppe, die Nacharbeit zweier Lötstellen und
+          die Überprüfung der Versorgungsspannungen. Der Bericht benennt
+          auch, welche Funktionsprüfung in der Anlage noch aussteht.
+        </p>
+        <Link
+          href="/referenzen"
+          className="mt-4 inline-block font-medium underline underline-offset-4"
+        >
+          Praxisbeispiel zur Baugruppenprüfung ansehen →
+        </Link>
+      </section>
       <section className="mt-16 max-w-4xl">
         <h2 className="text-2xl font-semibold">
           Ihr Ansprechpartner für Elektronikreparatur in Oderaue
