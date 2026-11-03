@@ -1,6 +1,9 @@
 
     
   
+
+    
+  
 "use client";
 
 import Link from "next/link";
@@ -11,7 +14,7 @@ const NAV = [
   { href: "/", label: "Start" },
   { href: "/leistungen", label: "Leistungen" },
   { href: "/service-ablauf", label: "Ablauf" },
-  { href: "/referenzen", label: "Referenzen" },
+  { href: "/reparaturbeispiele", label: "Reparaturbeispiele" },
   { href: "/faq", label: "FAQ" },
   { href: "/kontakt", label: "Kontakt" },
 ];
@@ -68,4 +71,5 @@ export default function SiteHeader() {
     </header>
   );
 }
+
 

@@ -215,22 +215,37 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-      <section className="mt-16 rounded-3xl border border-amber-100 bg-[#faf7f0] p-6 sm:p-10">
-        <h2 className="text-2xl font-semibold">
-          Einblick in unsere Werkstattarbeit
-        </h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-slate-600">
-          Ein dokumentierter Praxisfall zeigt die Sichtprüfung einer
-          elektronischen Baugruppe, die Nacharbeit zweier Lötstellen und
-          die Überprüfung der Versorgungsspannungen. Der Bericht benennt
-          auch, welche Funktionsprüfung in der Anlage noch aussteht.
-        </p>
-        <Link
-          href="/referenzen"
-          className="mt-4 inline-block font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950"
-        >
-          Praxisbeispiel zur Baugruppenprüfung ansehen →
-        </Link>
+      <section className="mt-16 overflow-hidden rounded-3xl border border-amber-100 bg-[#faf7f0]">
+        <div className="grid gap-0 md:grid-cols-[minmax(0,1.25fr)_minmax(240px,0.75fr)]">
+          <div className="p-6 sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-teal-800">Echter Werkstattfall</p>
+            <h2 className="mt-3 text-2xl font-semibold text-[#102c40]">
+              Reparaturbeispiele aus unserer Werkstatt
+            </h2>
+            <p className="mt-4 max-w-3xl leading-relaxed text-slate-600">
+              Sehen Sie anhand echter Fotos, wie wir elektronische Baugruppen untersuchen:
+              Im ersten dokumentierten Fall wurden zwei auffällige Lötstellen nachgearbeitet
+              und die Versorgungsspannungen überprüft. Auch die Grenzen der Funktionsprüfung
+              sind nachvollziehbar beschrieben.
+            </p>
+            <Link
+              href="/reparaturbeispiele"
+              className="mt-6 inline-flex rounded-xl bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800"
+            >
+              Reparaturbeispiel ansehen →
+            </Link>
+          </div>
+          <div className="bg-slate-100">
+            <img
+              src="/reparaturbeispiele/img_2096.webp"
+              alt="Echte elektronische Baugruppe aus der IEB-Werkstatt"
+              width={800}
+              height={700}
+              loading="lazy"
+              className="h-full min-h-64 w-full object-cover"
+            />
+          </div>
+        </div>
       </section>
       <section className="mt-16 max-w-4xl">
         <h2 className="text-2xl font-semibold">

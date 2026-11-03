@@ -1,3 +1,6 @@
+
+    
+  
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -41,6 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/anfrage`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/reparaturbeispiele`,
       changeFrequency: "monthly",
       priority: 0.7,
     },
